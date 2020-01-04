@@ -35,14 +35,23 @@ the direction angel "phi" and "theta" (https://en.wikipedia.org/wiki/Spherical_c
 glm::mat3 rotX = glm::mat3(0.0);
 
 rotX[0][0] = -cos(radAngel);
+
 rotX[0][1] = sin(-radAngelY)*(sin(radAngel)) ;
+
 rotX[1][0] = -sin(-radAngelY)*(sin(radAngel));  
+
 rotX[2][0] = -sin(radAngel);
+
 rotX[1][1] = -cos(-radAngelY);
+
 rotX[1][2] = sin(-radAngelY);
+
 rotX[2][1] = -sin(-radAngelY)*(cos(radAngel));
+
 rotX[2][2] = -cos(-radAngelY)*(cos(radAngel));
+
 rotX[0][2] = sin(radAngel)*(cos(-radAngelY));
+
 
 
 If you are turning "up" or "down", that means that it's done on the angel "theta" that means that you are turning across 
