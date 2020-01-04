@@ -1,6 +1,5 @@
-Name: Teodor Linnik, 312728017
-      Sagi Chafetz, 203867148
-	  
+Name: Teodor Linnik
+
 Instructions:
 Use the buttons "left" and "right" in order to change velocity direction to "left" or right".
 Use the buttons "up" and "down" in order to change velocity direction to "up" or down", in other words
@@ -30,8 +29,11 @@ It's done by the function playTune, the input of this function is path to specif
 If snake switch the direction of velocity we implemented the linear skinning.
 
 Switching the direction from the snake point of view based on rotation matrix on 3D which took into account
+
 the direction angel "phi" and "theta" (https://en.wikipedia.org/wiki/Spherical_coordinate_system).
+
 glm::mat3 rotX = glm::mat3(0.0);
+
 rotX[0][0] = -cos(radAngel);
 rotX[0][1] = sin(-radAngelY)*(sin(radAngel)) ;
 rotX[1][0] = -sin(-radAngelY)*(sin(radAngel));  
@@ -47,12 +49,19 @@ If you are turning "up" or "down", that means that it's done on the angel "theta
 the axis which is perpendicular to the vector on direction "phi", it's done by using.
 globalSystemRot(angelYY, -glm::vec3(cos(radAngel), 0, sin(radAngel)), 6 /*zxAxis1*/);
 ...
+
 case zxAxis1:
+
 		if (mode == 0)
+		
 			theta = glm::rotate(theta, ang, rotVec);
+			
 		else
+		
 			theta = glm::rotate(glm::mat4(1), ang, rotVec) * theta;
+			
 		break;
+		
 	}
 ....
 
